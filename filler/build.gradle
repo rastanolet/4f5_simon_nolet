@@ -1,0 +1,10 @@
+plugins {
+    id 'local-4f5-plugin'
+}
+
+task historique (type:JavaExec) {
+	dependsOn 'classes'
+	main = 'filler.pages.historique.PageHistorique'
+	classpath = sourceSets.main.runtimeClasspath
+	jvmArgs('-Dfile.encoding=UTF-8', '-Duser.language=fr')
+}
