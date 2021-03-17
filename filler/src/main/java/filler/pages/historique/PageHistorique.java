@@ -1,9 +1,15 @@
 package filler.pages.historique;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.stage.WindowEvent;
 import javafx.stage.Stage;
+import ntro.debogage.DoitEtre;
 import ntro.debogage.J;
+import ntro.javafx.ChargeurDeVue;
 import ntro.javafx.Initialisateur;
+import ntro.mvc.controleurs.FabriqueControleur;
 import ntro.mvc.modeles.EntrepotDeModeles;
 import ntro.systeme.Systeme;
 
@@ -28,20 +34,51 @@ public class PageHistorique extends Application{
 	}
 
 	@Override
-	public void start(Stage arg0) throws Exception {
+	public void start(Stage fenetrePrincipale) throws Exception {
 		J.appel(this);
+		
+		ChargeurDeVue<VueHistorique> chargeur;
+		chargeur = new ChargeurDeVue<VueHistorique>(CHEMIN_HISTORIQUE_FXML);
+
+		VueHistorique vue = chargeur.getVue();
 		
 		String idModeleTest = IDS_MODELES_TESTS[alea.nextInt(IDS_MODELES_TESTS.length)];
 		//Historique historique = EntrepotDeModeles.creerModele(Historique.class, idModeleTest); 
 		Historique historique = EntrepotDeModeles.obtenirModele(Historique.class, idModeleTest);
 		
-		//J.valeurs(historique.getId(), historique.getMatch().getGagnant(), historique.getMatch().getPointJoueur1(),historique.getMatch().getPointJoueur2() );
+		AfficheurHistorique afficheurHistorique = new AfficheurHistorique();
+		
+		DoitEtre.nonNul(vue);
+
+		FabriqueControleur.creerControleur(ControleurHistorique.class, historique, vue, afficheurHistorique);
+
+		Scene scene = chargeur.nouvelleScene(LARGEUR_PIXELS, HAUTEUR_PIXELS);
+
+		fenetrePrincipale.setScene(scene);
+		
+		fenetrePrincipale.setMinWidth(LARGEUR_PIXELS);
+		fenetrePrincipale.setMinHeight(HAUTEUR_PIXELS);
+		
+		capterEvenementFermeture(fenetrePrincipale);
+
+		fenetrePrincipale.show();
 
 		
-		J.valeurs(historique.getId(), historique.getGagnant(), historique.getPointJoueur1(),historique.getPointJoueur2() );
+
 		
-		Systeme.quitter();
-		
+	}
+	
+	private void capterEvenementFermeture(Stage fenetrePrincipale) {
+		J.appel(this);
+
+		fenetrePrincipale.setOnCloseRequest(new EventHandler<WindowEvent>() {
+			@Override
+			public void handle(WindowEvent event) {
+				J.appel(this);
+
+				Systeme.quitter();
+			}
+		});
 	}
 
 }

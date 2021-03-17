@@ -1,19 +1,4 @@
-// Copyright (C) (2020) (Mathieu Bergeron) (mathieu.bergeron@cmontmorency.qc.ca)
-//
-// This file is part of tutoriels4f5
-//
-// tutoriels4f5 is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Affero General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// tutoriels4f5 is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Affero General Public License for more details.
-//
-// You should have received a copy of the GNU Affero General Public License
-// along with aquiletour.  If not, see <https://www.gnu.org/licenses/>
+
 
 
 package filler;
@@ -22,6 +7,24 @@ import filler.enumerations.Match;
 
 public class Constantes {
 	
+	public static final String CHEMIN_HISTORIQUE_FXML = "/historique/structure.xml";
+	public static final String CHEMIN_HISTORIQUE_CSS = "/historique/historique.css";
+	
 	public static final String[] IDS_MODELES_TESTS = {"test01","test02","test03"};
+	
+	public static final int LARGEUR_PIXELS_MIN = 400;
+	public static final int HAUTEUR_PIXELS_MIN = 600;
+
+	public static final int LARGEUR_PIXELS = 600;
+	public static final int HAUTEUR_PIXELS= 800;
+
+	public static final int LARGEUR_PARAMETRES_PIXELS_MIN = 250;
+	public static final int HAUTEUR_PARAMETRES_PIXELS_MIN = 500;
+
+	public static final int LARGEUR_PARAMETRES_PIXELS = 300;
+	public static final int HAUTEUR_PARAMETRES_PIXELS = 520;
+
+	public static final int LARGEUR_PARAMETRES_PIXELS_MAX = 350;
+	public static final int HAUTEUR_PARAMETRES_PIXELS_MAX = 540;
 	
 }

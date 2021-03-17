@@ -7,32 +7,20 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 
+
+
 <VBox xmlns:fx="http://javafx.com/fxml" alignment="center"
-    fx:controller="filler.pages.historique.VueHistorique">
+    fx:controller="filler.pages.historique.VueHistorique" stylesheets="@app/cssfilepath.css">
+	
+	<HBox alignment="center">
+			<Text fx:id="titreHistorique" textAlignment="CENTER" text="Historique de parties:"/>
+	</HBox>
+	
+	<HBox fx:id="conteneurMatch" alignment="center">
+			<Text fx:id="pointJoueur1" text="Joueur1"/>
+			
+			<Text fx:id="pointJoueur2" text="Joueur2"/>
+			
+	</HBox>
 
-	<VBox>
-		<HBox alignment="center">
-			<Text textAlignment="CENTER" text="Taille de la grille?"/>
-		</HBox>
-		<HBox alignment="center">
-	        <ComboBox fx:id="choixTaille"/>
-		</HBox>
-
-		<HBox alignment="center">
-			<Text textAlignment="CENTER" text="Qui commence?"/>
-		</HBox>
-
-		<VBox>
-				<HBox alignment="center">
-					<Button fx:id="caseRouge"/>
-					<CheckBox fx:id="checkRouge"/>
-				</HBox>
-
-				<HBox alignment="center">
-					<Button fx:id="caseJaune"/>
-					<CheckBox fx:id="checkJaune"/>
-				</HBox>
-
-		</VBox>
-	</VBox>
 </VBox>

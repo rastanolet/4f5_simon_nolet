@@ -77,11 +77,7 @@ public class Historique extends Modele<HistoriqueLectureSeule> implements Histor
 
 
 
-	@Override
-	public Match getMatch() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 
 	
