@@ -1,26 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Text?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-
-
-<VBox xmlns:fx="http://javafx.com/fxml" alignment="center"
-    fx:controller="filler.pages.historique.VueHistorique" stylesheets="@app/cssfilepath.css">
+<VBox alignment="center" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="filler.pages.historique.VueHistorique">
 	
 	<HBox alignment="center">
-			<Text fx:id="titreHistorique" textAlignment="CENTER" text="Historique de parties:"/>
+			<Text fx:id="titreHistorique" text="Historique de parties:" textAlignment="CENTER" style="-fx-font: 24 arial;" />
 	</HBox>
 	
 	<HBox fx:id="conteneurMatch" alignment="center">
-			<Text fx:id="pointJoueur1" text="Joueur1"/>
+			<Text fx:id="pointJoueur1" text="Joueur1" />
+			<Text text="  VS  " />
+			<Text fx:id="pointJoueur2" text="Joueur2" />
 			
-			<Text fx:id="pointJoueur2" text="Joueur2"/>
-			
+	</HBox>
+	
+	<HBox alignment="center">
+		<Button fx:id="boutonTerminer" text="Terminer" />
 	</HBox>
 
 </VBox>

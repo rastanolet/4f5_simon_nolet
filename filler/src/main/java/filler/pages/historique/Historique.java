@@ -77,6 +77,13 @@ public class Historique extends Modele<HistoriqueLectureSeule> implements Histor
 
 
 
+	public void savoirQuiGagner(String joueurGagnant) {
+		
+		
+	}
+
+
+
 
 
 

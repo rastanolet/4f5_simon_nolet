@@ -1,8 +1,13 @@
 
 package filler.pages.historique;
 
+import ntro.debogage.DoitEtre;
 import ntro.debogage.J;
+import ntro.messages.FabriqueMessage;
 import ntro.mvc.controleurs.ControleurModeleVue;
+import ntro.mvc.controleurs.RecepteurCommandeMVC;
+import ntro.mvc.controleurs.RecepteurMessageMVC;
+
 
 public class   ControleurHistorique 
        extends ControleurModeleVue<HistoriqueLectureSeule, 
@@ -10,9 +15,11 @@ public class   ControleurHistorique
                                    VueHistorique,
                                    AfficheurHistorique> {
 	
+	
 	@Override
 	protected void installerReceptionCommandes() {
 		J.appel(this);
+		
 	}
 
 	@Override
@@ -29,4 +36,5 @@ public class   ControleurHistorique
 	protected void installerReceptionMessages() {
 		J.appel(this);
 	}
+	
 }

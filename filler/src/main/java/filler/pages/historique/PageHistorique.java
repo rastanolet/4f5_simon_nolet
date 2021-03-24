@@ -42,8 +42,7 @@ public class PageHistorique extends Application{
 
 		VueHistorique vue = chargeur.getVue();
 		
-		String idModeleTest = IDS_MODELES_TESTS[alea.nextInt(IDS_MODELES_TESTS.length)];
-		//Historique historique = EntrepotDeModeles.creerModele(Historique.class, idModeleTest); 
+		String idModeleTest = IDS_MODELES_TESTS[alea.nextInt(IDS_MODELES_TESTS.length)]; 
 		Historique historique = EntrepotDeModeles.obtenirModele(Historique.class, idModeleTest);
 		
 		AfficheurHistorique afficheurHistorique = new AfficheurHistorique();
